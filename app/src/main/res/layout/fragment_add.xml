@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#FFEEDA"
+    android:padding="16dp">
+
+    <!-- Текст с предложением -->
+    <TextView
+        android:id="@+id/instructionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Не знаете, какие цветы выбрать? Воспользуйтесь нашим генератором, чтобы создать идеальный букет!"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:fontFamily="@font/textfont"
+
+        android:gravity="center"
+        android:textStyle="bold" />
+
+    <!-- Карточка для Spinner и EditText -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        android:backgroundTint="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- Сезонный спиннер -->
+            <Spinner
+                android:id="@+id/occasionSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:prompt="@string/select_occasion"
+                android:textColor="#000000"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <!-- Ввод бюджета -->
+            <EditText
+                android:id="@+id/budgetEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/textfont"
+                android:hint="@string/enter_budget"
+                android:textColor="#000000"
+                android:inputType="number"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Кнопка генерации композиции -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/generateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/generate_combination"
+        android:fontFamily="@font/buttonfont"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:backgroundTint="#EC2578" />
+
+    <!-- Список сгенерированных цветов -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/generatedFlowersRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Кнопка добавления в корзину -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addToCartButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_to_cart"
+        android:fontFamily="@font/buttonfont"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:backgroundTint="#EC2578" />
+</LinearLayout>

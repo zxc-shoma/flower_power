@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home_ico"
+        android:title="Главная"
+        android:fontFamily="@font/textfont"/>
+    <item
+        android:id="@+id/nav_favorites"
+        android:icon="@drawable/love_ico"
+        android:title="Корзина"
+        android:fontFamily="@font/textfont"/>
+    <item
+        android:id="@+id/nav_add"
+        android:icon="@drawable/add_ico"
+        android:title="Создать"
+        android:fontFamily="@font/textfont"/>
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/iv_profile"
+        android:title="Профиль"
+        android:fontFamily="@font/textfont"/>
+</menu>

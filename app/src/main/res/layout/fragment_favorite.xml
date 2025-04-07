@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEEDA"
+    android:padding="16dp">
+
+    <!-- Заголовок корзины -->
+
+    <!-- Кнопка очистки -->
+    <TextView
+        android:id="@+id/cartTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/textfont"
+        android:text="Корзина"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toStartOf="@+id/clearCartButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Сообщение о пустой корзине -->
+    <ImageView
+        android:id="@+id/clearCartButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_clear"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/emptyCartMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="В корзине нет товаров"
+        android:textColor="#000000"
+        android:fontFamily="@font/textfont"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cartTitle" />
+    <!-- Контейнер выбора способа получения -->
+    <RadioGroup
+        android:id="@+id/deliveryOptionsContainer"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_rounded_buttons"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emptyCartMessage">
+
+        <RadioButton
+            android:id="@+id/pickupButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_delivery_option"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Самовывоз"
+            android:textColor="@drawable/selector_text_color"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="6dp"
+            android:background="#888888" />
+
+        <RadioButton
+            android:id="@+id/deliveryButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_delivery_option"
+            android:button="@null"
+            android:gravity="center"
+            android:text="Доставка"
+            android:textColor="@drawable/selector_text_color"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <!-- Контейнер адреса доставки -->
+    <LinearLayout
+        android:id="@+id/deliveryAddressContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#F0F0F0"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deliveryOptionsContainer">
+
+        <ImageView
+            android:id="@+id/addressIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/maps_ico" />
+
+        <TextView
+            android:id="@+id/adress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/textfont"
+            android:text="улица Революционная, 109"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Список товаров (RecyclerView) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@id/totalCostContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deliveryAddressContainer" />
+
+    <!-- Общая стоимость -->
+    <LinearLayout
+        android:id="@+id/totalCostContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/checkoutButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/totalCostLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/textfont"
+            android:text="Общая стоимость: "
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/totalCostValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/textfont"
+            android:text="0 ₽"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Стоимость с доставкой (видна только при выборе доставки) -->
+    <LinearLayout
+        android:id="@+id/totalCostDeliveryContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalCostContainer">
+
+
+        <TextView
+            android:id="@+id/totalCostDeliveryValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/textfont"
+            android:text="0 ₽"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Кнопка оформления заказа -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/checkoutButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#EC2578"
+        android:elevation="4dp"
+        android:fontFamily="@font/buttonfont"
+        android:text="Оформить заказ"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

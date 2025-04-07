@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1037295689149",
+    "firebase_url": "https://flower-power-d39c0-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "flower-power-d39c0",
+    "storage_bucket": "flower-power-d39c0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037295689149:android:a5df8ab4bb543923c4c6d4",
+        "android_client_info": {
+          "package_name": "com.example.flowerpower"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037295689149-mjt72m3dfes8q492l243cm0kkd9kf6d8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flowerpower",
+            "certificate_hash": "8e7bdd24e64da8def0f31792f17b8111c738975b"
+          }
+        },
+        {
+          "client_id": "1037295689149-75pv8krret3vlv0frm61b5326or7go15.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqG6tfgp_03VCxgWS0WbY4Hqv9LnLaoN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037295689149-75pv8krret3vlv0frm61b5326or7go15.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

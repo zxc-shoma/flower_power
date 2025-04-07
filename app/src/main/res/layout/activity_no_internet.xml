@@ -1,0 +1,68 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFEEDA"
+    tools:context=".NoInternetActivity">
+
+    <!-- Заголовок сообщения -->
+    <TextView
+        android:id="@+id/noInternetTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Нет подключения к Интернету"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="100dp" />
+
+    <!-- Основной текст -->
+    <TextView
+        android:id="@+id/noInternetMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="  Попробуйте сделать следующее:\n\n• Отключите режим полета.\n• Включите Wi-Fi или мобильный Интернет.\n• Проверьте уровень сигнала сети."
+        android:textSize="16sp"
+        android:textColor="#555555"
+
+        android:lineSpacingExtra="4dp"
+        app:layout_constraintTop_toBottomOf="@id/noInternetTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="16dp" />
+
+    <!-- Сообщение об ошибке -->
+    <TextView
+        android:id="@+id/errorCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ERR_INTERNET_DISCONNECTED"
+        android:textSize="14sp"
+        android:textColor="#999999"
+        app:layout_constraintTop_toBottomOf="@id/noInternetMessage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp" />
+
+    <!-- Кнопка для открытия настроек -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/openSettingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Открыть настройки"
+        android:fontFamily="@font/buttonfont"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#EC2578"
+        android:elevation="4dp"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/errorCode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
